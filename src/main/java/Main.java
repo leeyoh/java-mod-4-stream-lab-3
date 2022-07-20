@@ -1,9 +1,15 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
     public static int sumOfDivisors(int start, int end, int a, int b) {
-        // your code here
-        return 0;
+        List<Integer> numbers = new ArrayList<>();
+        for(int i = start; i <= end; i++){
+            numbers.add(i);
+        }
+        return numbers.stream().filter(x -> (x%a ==0 || x%b==0)).mapToInt(x->x).sum();
     }
 
     public static void main(String[] args) {
